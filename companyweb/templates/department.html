@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Department</title>
+</head>
+<body class="with-image">
+    {% block content %}
+    {% include 'includes/header.html' %}
+
+        {% for indiv in department %}
+        <div class="container container_image dep_container"><br/><br/>
+            <div class="dep_box">
+                <div class="dep_image">
+                    <img class="resized_image" src="{{ indiv.department_image.url }}" alt="">
+                </div>
+                <table>
+                    <tr>
+                        <th class="th_center">{{ indiv.name }}</th>
+                    </tr>
+                    <tr>
+                        <td>{{ indiv.description }}</td>
+                    </tr>         
+                </table>
+            </div>
+        </div>
+        {% endfor %}
+
+        <br><br>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+            {% if department.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ department.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            <li class="page-item disabled"><a class="page-link">Page {{ department.number }} of {{ department.paginator.num_pages }}</a></li>
+            {% if department.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ department.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ department.paginator.num_pages }}">Last &raquo</a></li>
+            {% endif %}
+            </ul>
+        </nav>
+
+
+    {% include 'includes/footer.html' %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: 'Roboto Slab';
+}
+
+body {
+    /* background-color: #d3d3d3; */
+    background-image: url('../images/background.jpg');
+    background-size: cover; /* This property ensures the image covers the entire body */
+    background-position: center;
+    background-attachment: fixed; /* Set the background position as fixed */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    padding-top: 60px;
+    padding-bottom: 60px; /* Adjust as needed */
+}
+
+.navbar {
+    padding-left: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #ebe8e8;
+    color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer Columns */
+.footer-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+/* Footer Links */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: black;
+}
+
+/* Social Icons */
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: black;
+    padding: 0 15px;
+    font-size: 20px;
+}
+
+/* Copyright */
+.copyright {
+    margin-top: 20px;
+    font-size: 12px;
+}
+
+.company {
+    font-size: 75px;
+    color: peachpuff;
+    font-weight: 900;
+}
+.company_nav a {
+    text-decoration: none;
+    padding: 15px 15px;
+    color: #ebe8e8;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 15px;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: #ebe8e893;
+}
+
+th {
+    background-color: #333;
+    color: #fff;
+}
+
+/* Hover Effect */
+tr:hover {
+    background-color: #ddd;
+}
+.page-link{
+    text-decoration: none;
+    color: black;
+}
+
+.container_image {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f5f5f5b7;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+.with_image {
+    display: inline-block;
+}
+.container_image {
+    text-align: center;
+    display: inline-block;
+    margin: 0 60px 60px;
+    border: 1px solid black;
+    width: 500px;
+    height: 1000px;
+}
+
+
+.dep_image .resized_image {
+    width: 450px; /* Set the desired width */
+    height: 450px; /* Maintain aspect ratio by setting height to auto */
+}
+
+.th_center {
+    text-align: center;
+}

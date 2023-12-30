@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Employee</title>
+</head>
+<body>
+    {% block content %}
+    {% include 'includes/header.html' %}
+        <div class="container"><br/><br/>
+            <table>
+                <tr>
+                    <th>Employee</th>
+                    <th>Birthdate</th>
+                    <th>Email</th>
+                    <th>Hired Date</th>
+                    <th>Department</th>
+                    <th>Position</th>
+                    <th>Skill</th>
+                </tr>
+                {% for indiv in employee %}
+                {% for skill in indiv.skills.all %}
+                <tr>
+                        <td>{{ indiv }}</td>
+                        <td>{{ indiv.birth_date }}</td>
+                        <td>{{ indiv.email }}</td>
+                        <td>{{ indiv.hire_date }}</td>
+                        <td>{{ indiv.department }}</td>
+                        <td>{{ indiv.position }}</td>
+                        <td>{{ skill.name }}</td>
+                </tr>  
+                {% endfor %}
+                {% endfor %}            
+            </table>
+        </div>
+
+        <br><br>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+            {% if employee.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo First</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ employee.previous_page_number }}">Previous</a></li>
+            {% endif %}
+            <li class="page-item disabled"><a class="page-link">Page {{ employee.number }} of {{ employee.paginator.num_pages }}</a></li>
+            {% if employee.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ employee.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ employee.paginator.num_pages }}">Last &raquo</a></li>
+            {% endif %}
+            </ul>
+        </nav>
+
+    {% include 'includes/footer.html' %}
+    {% endblock %}
+</body>
+</html>
